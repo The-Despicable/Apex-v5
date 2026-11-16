@@ -1,0 +1,14 @@
+# APEX v5 — the REAL control. Copy to .github/workflows/audit-gate.yml.
+# Local hooks are advisory; this job re-verifies against the pushed commit.
+name: apex-audit-gate
+on: [push, pull_request]
+jobs:
+  verdict:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Verify signed audit verdict against this commit
+        env:
+          APEX_AUDIT_KEY: ${{ secrets.APEX_AUDIT_KEY }}
+        run: sh gate/verify-verdict.sh --require-pass

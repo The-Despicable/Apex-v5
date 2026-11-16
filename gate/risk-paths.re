@@ -1,0 +1,1 @@
+(^|/)(auth|migrations?|schema|db|database|money|billing|payments)(/|$)|(^|/)api/public/|(^|/)infra/|(^|/)terraform/|(^|/)k8s/|(^|/)models?/|(^|/)entities/|(^|/)Dockerfile$|(^|/)docker-compose\.ya?ml$|(^|/)\.github/workflows/|(^|/)openapi\.ya?ml$|(^|/)(package-lock\.json|yarn\.lock|pnpm-lock\.yaml|poetry\.lock|requirements\.txt|Cargo\.lock|go\.sum)$
